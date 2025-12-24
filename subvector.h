@@ -11,7 +11,7 @@ class Subvector {
   void ShrinkToFit();
   void Clear();
   Subvector& operator=(const Subvector& array);
-  Subvector& operator=(Subvector&& array);
+  Subvector& operator=(Subvector&& array) noexcept;
   Subvector(const Subvector& array);
   Subvector(Subvector&& array) noexcept;
   ~Subvector();
