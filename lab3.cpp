@@ -38,14 +38,14 @@ Subvector& Subvector::operator=(const Subvector& array) {
   return *this;
 }
 
-Subvector::Subvector(Subvector&& array) noexcept :
+Subvector::Subvector(Subvector&& array) noexcept:
       mas_(array.mas_), top_(array.top_), capacity_(array.capacity_)  {
   array.mas_ = nullptr;
   array.top_ = 0;
   array.capacity_ = 0;
 }
 
-Subvector& Subvector::operator=(Subvector&& array) {
+Subvector& Subvector::operator=(Subvector&& array) noexcept {
   if (this != &array) {
     delete[] mas_;
     mas_ = array.mas_;
